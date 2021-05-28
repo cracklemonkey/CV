@@ -33,8 +33,8 @@ header section article{
 
 header section img{
     
-    width: 150px;
-    height: 190px;
+    width: 200px;
+    height: 250px;
     margin: 50px;
 }
 
@@ -84,12 +84,16 @@ footer{
         margin: 0;
         margin-left: 0;
         }
-        main section{
+    header section img{
+        width: 150px;
+        height: 190px;
+    }
+    main section{
             width: 540px;
             margin: 0;
         }
     
-        main section article{
+    main section article{
             margin: 0;
             padding: 0;
             
