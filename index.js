@@ -1,4 +1,23 @@
-
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        const response = JSON.parse(xhttp.responseText)
+        console.log(response.personalia.address)
+        const pers = document.getElementById("personalia")
+        const persElement = response.personalia
+        pers.innerHTML += persElement.address
+        pers.innerHTML += persElement.født
+        pers.innerHTML += persElement.email
+        pers.innerHTML += persElement.linkedin
+        pers.innerHTML += persElement.github
+        pers.innerHTML += persElement.sivilstatus
+        
+      
+      // document.getElementById("personalia").address.innerHTML = xhttp.responseText;
+    }
+};
+xhttp.open("GET", "personalia.json", true);
+xhttp.send();
 
 //Buttons
 const keyBtn = document.getElementById("keyBtn");

@@ -1,0 +1,14 @@
+{
+    "personalia": {
+        
+            "address": "<b>Adresse<b>:\tXXXgata 32, 0000 Oslo<br>",
+            "mobil": "<b>Mobil</b>:\t<a href='tel:11111111'>111 11 111</a><br>",
+            "født": "<b>Født</b>:\t25.01.95<br>",
+            "email": "<b>E-mail</b>:\t<a href='mailto:danielstupar95@gmail.com'>danielstupar95@gmail.com</a><br>",
+            "linkedin": "<b>Linkedin</b>:\t<a href='https://www.linkedin.com/in/daniel-stupar-8839081b0/'>www.linkedin.com/in/daniel-stupar</a><br>",
+            "github": "<b>Github</b>:\t<a href='https://github.com/cracklemonkey/'>https://github.com/cracklemonkey/</a><br>",
+            "sivilstatus":"<b>Sivilstatus</b>:\tSingel<br>"
+    }
+        
+    
+}
