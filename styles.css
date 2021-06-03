@@ -80,10 +80,16 @@ main section article{
   display: inline-block;
 }
 
+.dropbtn{
+
+   margin-left: 75%;
+    
+}
 
 .dropdown-content {
   display: none;
   position: absolute;
+  margin-left: 75%;
   background-color: #f1f1f1;
   min-width: 160px;
   z-index: 1;

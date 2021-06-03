@@ -1,16 +1,55 @@
+//forsøk på lit json og ajax stuff
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         const response = JSON.parse(xhttp.responseText)
-        console.log(response.personalia.address)
+        console.log(typeof(response.personalia))
         const pers = document.getElementById("personalia")
-        const persElement = response.personalia
-        pers.innerHTML += persElement.address
+        const keyPara = document.getElementById('keyPara')
+        const eduPara = document.getElementById('eduPara')
+        const workPara = document.getElementById('workPara')
+        const dataList = document.getElementById('dataList')
+        const langList = document.getElementById('lang')
+        const intList = document.getElementById('int')
+        
+        const persElements = response.personalia
+        const keyParaElements = response.articel.keykval
+        const eduParaElements = response.articel.utdanning
+        const workParaElements = response.articel.work
+        const dataElements = response.list.dataferd
+        const langElements = response.list.sprak
+        const intElements = response.list.interesser
+        
+       for (const key in persElements) {
+           if (Object.hasOwnProperty.call(persElements, key)) {
+               const element =persElements[key];
+               pers.innerHTML += element
+               
+           }
+       }
+
+       keyPara.innerHTML += keyParaElements
+       eduPara.innerHTML += eduParaElements
+       workPara.innerHTML += workParaElements
+       dataList.innerHTML += dataElements
+       langList.innerHTML += langElements
+       intList.innerHTML += intElements
+     /*  for (const key in keyParaElements) {
+        if (Object.hasOwnProperty.call(keyParaElements, key)) {
+            const aelement =keyParaElements[key];
+            keyPara.innerHTML += aelement
+            
+        }
+    }*/
+       //pers.innerHTML += entries[0][1]
+       
+       
+        /*pers.innerHTML += persElement.address
         pers.innerHTML += persElement.født
         pers.innerHTML += persElement.email
         pers.innerHTML += persElement.linkedin
         pers.innerHTML += persElement.github
-        pers.innerHTML += persElement.sivilstatus
+        pers.innerHTML += persElement.sivilstatus*/
         
       
       // document.getElementById("personalia").address.innerHTML = xhttp.responseText;
@@ -20,9 +59,9 @@ xhttp.open("GET", "personalia.json", true);
 xhttp.send();
 
 //Buttons
-const keyBtn = document.getElementById("keyBtn");
-const eduBtn = document.getElementById("eduBtn");
-const workBtn = document.getElementById("workBtn");
+const keyBtn = document.getElementById('keyBtn');
+const eduBtn = document.getElementById('eduBtn');
+const workBtn = document.getElementById('workBtn');
 //paragraphs
 const keyPara = document.getElementById('keyPara');
 const eduPara = document.getElementById('eduPara');
@@ -34,20 +73,6 @@ const fourStar = document.getElementById('fourStar');
 const threeStar = document.getElementById('threeStar');
 const twoStar = document.getElementById('twoStar');
 const oneStar = document.getElementById('oneStar');
-/*//radio buttons textsize
-const threeStar = document.getElementById('threeStar');
-const twoStar = document.getElementById('twoStar');
-const oneStar = document.getElementById('oneStar');
-//radio buttons font family
-const threeStar = document.getElementById('threeStar');
-const twoStar = document.getElementById('twoStar');
-const oneStar = document.getElementById('oneStar');
-//radio buttons header backround
-const threeStar = document.getElementById('threeStar');
-const twoStar = document.getElementById('twoStar');
-const oneStar = document.getElementById('oneStar');
-
-*/
 
 function sortStarList(starId){
 
