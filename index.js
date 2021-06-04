@@ -4,27 +4,16 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         const response = JSON.parse(xhttp.responseText)
         
-        
-        
-        
-        
-        
-        
+         
         const persElements = response.personalia
         const paraElements = response.articel
         const listElements = response.list
-        //const keyParaElements = response.articel.keykval
-        //const eduParaElements = response.articel.utdanning
-        //const workParaElements = response.articel.work
         
-        //const dataElements = response.list.dataferd
-        //const langElements = response.list.sprak
-        //const intElements = response.list.interesser
         
        for (let key in persElements) {
            if (Object.hasOwnProperty.call(persElements, key)) {
                 const pers = document.getElementById("personalia")
-                const element =persElements[key];
+                let element =persElements[key];
                 pers.innerHTML += element
                
            }
@@ -74,31 +63,7 @@ xhttp.onreadystatechange = function() {
     }
     
 
-        // keyPara.innerHTML += keyParaElements
-        //eduPara.innerHTML += eduParaElements
-        //workPara.innerHTML += workParaElements
-        //dataList.innerHTML += dataElements
-        //langList.innerHTML += langElements
-        //intList.innerHTML += intElements
-     /*  for (const key in keyParaElements) {
-        if (Object.hasOwnProperty.call(keyParaElements, key)) {
-            const aelement =keyParaElements[key];
-            keyPara.innerHTML += aelement
-            
-        }
-    }*/
-       //pers.innerHTML += entries[0][1]
-       
-       
-        /*pers.innerHTML += persElement.address
-        pers.innerHTML += persElement.født
-        pers.innerHTML += persElement.email
-        pers.innerHTML += persElement.linkedin
-        pers.innerHTML += persElement.github
-        pers.innerHTML += persElement.sivilstatus*/
         
-      
-      // document.getElementById("personalia").address.innerHTML = xhttp.responseText;
     }
 };
 xhttp.open("GET", "personalia.json", true);
@@ -119,6 +84,9 @@ const fourStar = document.getElementById('fourStar');
 const threeStar = document.getElementById('threeStar');
 const twoStar = document.getElementById('twoStar');
 const oneStar = document.getElementById('oneStar');
+
+
+
 
 function sortStarList(starId){
 
@@ -152,37 +120,37 @@ function radioHandler(event) {
 if(event.target.name === "textSize"){
     
     if(event.target.id === "textSizesmall"){
-        const personalia = document.getElementById('personalia')
+        let personalia = document.getElementById('personalia')
         personalia.style.fontSize = "10px"
     }else if(event.target.id === "textSizesmedium"){
-        const personalia = document.getElementById('personalia')
+        let personalia = document.getElementById('personalia')
         personalia.style.fontSize = "20px"
     }else{
-        const personalia = document.getElementById('personalia')
+        let personalia = document.getElementById('personalia')
         personalia.style.fontSize = "40px"
     }}
 else if(event.target.name === "fontFamily"){
         console.log("inni else iffen")
         if(event.target.id === "newRoman"){
             console.log("roman")
-            const personalia = document.getElementById('personalia')
+            let personalia = document.getElementById('personalia')
             personalia.style.fontFamily = "Times, serif"
         }else if(event.target.id === "sSerif"){
-            const personalia = document.getElementById('personalia')
+            let personalia = document.getElementById('personalia')
             personalia.style.fontFamily = "sans-serif"
         }else{
-            const personalia = document.getElementById('personalia')
+            let personalia = document.getElementById('personalia')
             personalia.style.fontFamily = "fantasy"
 }}else{
         
     if(event.target.id === "backYellow"){
-            const header = document.getElementById('header')
+            let header = document.getElementById('header')
             header.style.background = "yellow"
         }else if(event.target.id === "backlightskyblue"){
-            const header = document.getElementById('header')
+            let header = document.getElementById('header')
             header.style.background = "lightskyblue"
         }else{
-            const header = document.getElementById('header')
+            let header = document.getElementById('header')
             header.style.background = "red"
 
         }
